@@ -137,12 +137,24 @@ button.correct-answer {
     max-width: 500px;
     margin: 50px auto;
     text-align: center;
+    position: relative;
 }
 #hidden-hint {
     margin-top: 20px;
     font-weight: bold;
     color: #ffeb3b;
     transition: opacity 0.5s;
+}
+#qr-code {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+#qr-code img {
+    max-width: 200px;
+    border: 5px solid #6a1b9a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 600px) {

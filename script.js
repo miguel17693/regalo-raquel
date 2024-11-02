@@ -1,7 +1,7 @@
 /* script.js */
 (function() {
     let currentQuestionIndex = 0;
-    let currentLanguage = 'en';
+    let currentLanguage = 'e';
     let hintTimeout = null;
 
     const correctAnswers = {
@@ -24,7 +24,7 @@
     };
 
     const correctStepsForSeventhQuestion = [
-        "take-goat",
+        "take-goat",/* 
         "cross",
         "leave-goat",
         "cross",
@@ -39,7 +39,7 @@
         "leave-cabbage",
         "cross",
         "take-goat",
-        "cross",
+        "cross", */
     ];
 
     let seventhStepIndex = 0;
@@ -155,8 +155,10 @@
 
     function checkGameWon() {
         if (localStorage.getItem('gameWon')) {
-            document.getElementById('language-selection').style.display = 'block';
             document.getElementById('content').style.display = 'none';
+            document.getElementById('language-selection').style.display = 'none';
+            const victoryScreen = document.getElementById('victory-screen');
+            victoryScreen.style.display = 'block';
         }
     }
 
