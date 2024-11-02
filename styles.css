@@ -1,0 +1,213 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #6a1b9a, #8e24aa);
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    min-height: 100vh;
+}
+#language-selection {
+    padding: 30px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    margin: 50px auto;
+}
+#language-selection h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+#language-selection button {
+    background-color: #8e24aa;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#language-selection button:hover {
+    background-color: #ab47bc;
+}
+.question {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    display: none;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-in-out;
+    color: #333;
+}
+#hint {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: none;
+    color: #ffeb3b;
+}
+#next-button {
+    margin-top: 30px;
+    padding: 15px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 30px auto;
+    background-color: #ff8a65;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+#next-button:hover {
+    background-color: #ff7043;
+}
+.answer-input {
+    margin-top: 15px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    max-width: 560px;
+    box-sizing: border-box;
+    border: 2px solid #6a1b9a;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+.dropdown-answer {
+    margin-top: 15px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    max-width: 560px;
+    box-sizing: border-box;
+    border: 2px solid #6a1b9a;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+button[data-value] {
+    background-color: #8e24aa;
+    color: #ffffff;
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+}
+button[data-value]:hover {
+    background-color: #ab47bc;
+}
+button.wrong-answer {
+    animation: shake 0.3s ease;
+    background-color: #d32f2f !important;
+    border-color: #d32f2f;
+}
+button.correct-answer {
+    background-color: #4caf50 !important;
+    border-color: #4caf50;
+    animation: fadeOutGreen 1s forwards;
+}
+
+.wrong-answer {
+    animation: shake 0.3s ease;
+    border-color: #d32f2f !important;
+}
+
+#seventh-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+#victory-screen {
+    background-color: #fff;
+    color: #333;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+#hidden-hint {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffeb3b;
+    transition: opacity 0.5s;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    .question {
+        padding: 15px;
+        font-size: 1em;
+    }
+    #next-button {
+        width: 90%;
+        padding: 15px;
+        font-size: 1.2em;
+        margin-top: 25px;
+    }
+    .answer-input, .dropdown-answer {
+        width: calc(100% - 30px);
+        max-width: 100%;
+        margin-top: 15px;
+        box-sizing: border-box;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    button[data-value] {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutGreen {
+    0% { background-color: #4caf50; border-color: #4caf50; }
+    100% { background-color: #8e24aa; border-color: transparent; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.victory-shake {
+    animation: shakeVictory 0.5s ease;
+    background-color: #4caf50;
+}
+
+@keyframes shakeVictory {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}

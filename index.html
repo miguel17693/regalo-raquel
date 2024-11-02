@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Party Puzzle Questions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="language-selection">
+        <h1>Select Your Language</h1>
+        <button onclick="selectLanguage('en')">English</button>
+        <button onclick="selectLanguage('es')">Español</button>
+    </div>
+
+    <div id="content" style="display: none;">
+        <h1 id="main-title" data-en="Let's Get This Party Started!" data-es="¡Empecemos la Fiesta!">Let's Get This Party Started!</h1>
+        <p id="main-description" data-en="Answer these fun puzzle questions to break the ice and get everyone thinking!" data-es="¡Responde estas divertidas preguntas para romper el hielo y poner a todos a pensar!">Answer these fun puzzle questions to break the ice and get everyone thinking!</p>
+        
+        <div class="question" data-question="0">
+            <p data-en="I have keys but no locks. I have space but no room. You can enter but you can't go outside. What am I?" data-es="Tengo llaves pero no candados. Tengo espacio pero no habitación. Puedes entrar, pero no salir. ¿Qué soy?">I have keys but no locks. I have space but no room. You can enter but you can't go outside. What am I?</p>
+            <input type="text" id="answer-0" class="answer-input" placeholder="Type your answer here" data-placeholder-en="Type your answer here" data-placeholder-es="Escribe tu respuesta aquí">
+        </div>
+        <div class="question" data-question="1">
+            <p data-en="What gets wetter as it dries?" data-es="¿Qué se moja mientras se seca?">What gets wetter as it dries?</p>
+            <input type="text" id="answer-1" class="answer-input" placeholder="Type your answer here" data-placeholder-en="Type your answer here" data-placeholder-es="Escribe tu respuesta aquí">
+        </div>
+        <div class="question" data-question="2">
+            <p data-en="I am in the middle of the sea but never get wet. What am I?" data-es="Estoy en medio del mar, pero nunca me mojo. ¿Qué soy?">I am in the middle of the sea but never get wet. What am I?</p>
+            <input type="text" id="answer-2" class="answer-input" placeholder="Type your answer here" data-placeholder-en="Type your answer here" data-placeholder-es="Escribe tu respuesta aquí">
+        </div>
+        <div class="question" data-question="3">
+            <p data-en="I speak without a mouth and hear without ears. I have nobody, but I come alive with the wind. What am I?" data-es="Hablo sin boca y escucho sin oídos. No tengo cuerpo, pero cobro vida con el viento. ¿Qué soy?">I speak without a mouth and hear without ears. I have nobody, but I come alive with the wind. What am I?</p>
+            <input type="text" id="answer-3" class="answer-input" placeholder="Type your answer here" data-placeholder-en="Type your answer here" data-placeholder-es="Escribe tu respuesta aquí">
+        </div>
+        <div class="question" data-question="4">
+            <p data-en="I'm light as a feather, yet the strongest person can't hold me for more than five minutes. What am I?" data-es="Soy liviano como una pluma, pero la persona más fuerte no puede sostenerme por más de cinco minutos. ¿Qué soy?">I'm light as a feather, yet the strongest person can't hold me for more than five minutes. What am I?</p>
+            <input type="text" id="answer-4" class="answer-input" placeholder="Type your answer here" data-placeholder-en="Type your answer here" data-placeholder-es="Escribe tu respuesta aquí">
+        </div>
+        <div class="question" data-question="5">
+            <p data-en="What is always coming but never arrives?" data-es="¿Qué siempre viene pero nunca llega?">What is always coming but never arrives?</p>
+            <input type="text" id="answer-5" class="answer-input" placeholder="Type your answer here" data-placeholder-en="Type your answer here" data-placeholder-es="Escribe tu respuesta aquí">
+        </div>
+        <div class="question" id="river-crossing-question" data-question="6">
+            <p data-en="You need to cross a river with a wolf, a goat, and a cabbage. You can only carry one at a time. If you leave the wolf with the goat, the wolf will eat it. If you leave the goat with the cabbage, the goat will eat it. Choose each step to solve the puzzle:" data-es="Necesitas cruzar un río con un lobo, una cabra y una col. Solo puedes llevar uno a la vez. Si dejas al lobo con la cabra, el lobo se la comerá. Si dejas a la cabra con la col, la cabra se la comerá. Elige cada paso para resolver el acertijo:">You need to cross a river with a wolf, a goat, and a cabbage. You can only carry one at a time. If you leave the wolf with the goat, the wolf will eat it. If you leave the goat with the cabbage, the goat will eat it. Choose each step to solve the puzzle:</p>
+            <div id="seventh-options">
+                <button data-value="take-goat" data-en="Take Goat" data-es="Llevar Cabra">Take Goat</button>
+                <button data-value="take-wolf" data-en="Take Wolf" data-es="Llevar Lobo">Take Wolf</button>
+                <button data-value="take-cabbage" data-en="Take Cabbage" data-es="Llevar Col">Take Cabbage</button>
+                <button data-value="leave-goat" data-en="Leave Goat" data-es="Dejar Cabra">Leave Goat</button>
+                <button data-value="leave-wolf" data-en="Leave Wolf" data-es="Dejar Lobo">Leave Wolf</button>
+                <button data-value="leave-cabbage" data-en="Leave Cabbage" data-es="Dejar Col">Leave Cabbage</button>
+                <button data-value="cross" data-en="Cross" data-es="Cruzar">Cross</button>
+            </div>
+        </div>
+
+        <button id="next-button" data-en="Next Question" data-es="Siguiente Pregunta">Next Question</button>
+        
+        <div id="hint" data-en="Hint for the next game: \"The next challenge involves teamwork... and a little bit of dancing! Get ready to move!\"" data-es="Pista para el próximo juego: \"¡El próximo desafío implica trabajo en equipo... y un poco de baile! ¡Prepárate para moverte!\"">Hint for the next game: "The next challenge involves teamwork... and a little bit of dancing! Get ready to move!"</div>
+    </div>
+
+    <div id="victory-screen" style="display: none;">
+        <h1 data-en="You've Won!" data-es="¡Has Ganado!">You've Won!</h1>
+        <p data-en="Click to see the hint for the next riddle." data-es="Haz clic para ver la pista del próximo acertijo.">Click to see the hint for the next riddle.</p>
+        <p id="hidden-hint" style="display: none;">Hint for the next game: "The next challenge involves teamwork... and a little bit of dancing! Get ready to move!"</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
