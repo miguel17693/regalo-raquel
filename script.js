@@ -1,7 +1,7 @@
 /* script.js */
 (function() {
     let currentQuestionIndex = 0;
-    let currentLanguage = 'e';
+    let currentLanguage = 'en';
     let hintTimeout = null;
 
     const correctAnswers = {
@@ -24,7 +24,7 @@
     };
 
     const correctStepsForSeventhQuestion = [
-        "take-goat",/* 
+        "take-goat",
         "cross",
         "leave-goat",
         "cross",
@@ -39,7 +39,7 @@
         "leave-cabbage",
         "cross",
         "take-goat",
-        "cross", */
+        "cross",
     ];
 
     let seventhStepIndex = 0;
@@ -81,6 +81,7 @@
                     setTimeout(() => {
                         currentAnswer.classList.remove('wrong-answer');
                         resetToFirstQuestion();
+                        clearAllInputs(); // Clear all inputs after failing
                     }, 500);
                     return;
                 }
@@ -105,6 +106,13 @@
         showQuestion(currentQuestionIndex);
         seventhStepIndex = 0;
         document.querySelectorAll('.correct-answer').forEach(btn => btn.classList.remove('correct-answer'));
+    }
+
+    function clearAllInputs() {
+        const inputs = document.querySelectorAll('.answer-input');
+        inputs.forEach(input => {
+            input.value = '';
+        });
     }
 
     function showVictoryAnimation() {
@@ -195,6 +203,7 @@
                 setTimeout(() => {
                     button.classList.remove('wrong-answer');
                     resetToFirstQuestion();
+                    clearAllInputs(); // Clear all inputs after failing
                 }, 500);
             }
         });
